@@ -32,7 +32,7 @@
 				
 				if($this->form_validation->run() == TRUE){
 					$login = $this->input->post('user');
-					$senha = do_hash($this->input->post('senha'));
+					$senha = hash('md5', $this->input->post('senha'));
 
 					$login = $this->usuario->login($login, $senha);
 

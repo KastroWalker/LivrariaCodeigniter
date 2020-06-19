@@ -58,7 +58,7 @@
 				# Salvar no banco
 				$dados['nome'] = $this->input->post('nome');
 				$dados['email'] = $this->input->post('email');
-				$dados['senha'] = do_hash($this->input->post('senha'));
+				$dados['senha'] = hash('md5', $this->input->post('senha'));
 				$dados['ativo'] = 1;
 
 				$this->usuarios->doInsert($dados);
